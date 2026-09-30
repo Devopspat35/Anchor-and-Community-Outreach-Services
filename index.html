@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anchor and Community Outreach Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">A</div>
+      <div>
+        <h1>Anchor and Community Outreach Services</h1>
+        <span>Connecting people. Strengthening communities.</span>
+      </div>
+    </div>
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <nav id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#stakeholders">Stakeholders</a>
+      <a href="#members">Members</a>
+      <a href="#contact">Contact</a>
+      <button class="login-btn" id="openLogin">Stakeholder Login</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">COMMUNITY • SUPPORT • CONNECTION</span>
+        <h2>Building stronger communities, one connection at a time.</h2>
+        <p>Anchor and Community Outreach Services brings stakeholders, members, families, and community partners together through compassionate support and meaningful engagement.</p>
+        <div class="hero-actions">
+          <a class="primary" href="#members">Meet Our Community</a>
+          <button class="secondary" id="heroLogin">Member / Stakeholder Login</button>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-circle">⚓</div>
+        <h3>Our Community Hub</h3>
+        <p>A central place for profiles, community connections, updates, and outreach resources.</p>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-heading">
+        <span class="eyebrow">ABOUT US</span>
+        <h2>People at the heart of our work</h2>
+        <p>Use this space to introduce your organization, mission, services, programs, and community impact.</p>
+      </div>
+      <div class="feature-grid">
+        <article><div class="icon">🤝</div><h3>Community Outreach</h3><p>Connect members with programs, resources, events, and support.</p></article>
+        <article><div class="icon">👥</div><h3>Stakeholder Network</h3><p>Give partners a dedicated place to share their roles and contact information.</p></article>
+        <article><div class="icon">❤️</div><h3>Member Support</h3><p>Highlight members and celebrate the people who make the community stronger.</p></article>
+      </div>
+    </section>
+
+    <section class="section alt" id="stakeholders">
+      <div class="section-heading row">
+        <div><span class="eyebrow">STAKEHOLDERS</span><h2>Our community partners</h2></div>
+        <button class="outline" id="addStakeholder">+ Add Stakeholder</button>
+      </div>
+      <div class="profile-grid" id="stakeholderGrid"></div>
+    </section>
+
+    <section class="section" id="members">
+      <div class="section-heading row">
+        <div><span class="eyebrow">MEMBERS</span><h2>Meet our members</h2></div>
+        <button class="outline" id="addMember">+ Add Member</button>
+      </div>
+      <div class="profile-grid" id="memberGrid"></div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <span class="eyebrow">GET IN TOUCH</span>
+        <h2>Let's build a stronger community together.</h2>
+        <p>Replace this information with your organization's address, phone number, email, office hours, and social media links.</p>
+      </div>
+      <div class="contact-card">
+        <p><strong>Email</strong><br>info@anchorcommunity.org</p>
+        <p><strong>Phone</strong><br>(000) 000-0000</p>
+        <p><strong>Office</strong><br>Community Services Centre</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© 2026 Anchor and Community Outreach Services</div>
+    <div>Privacy • Terms • Accessibility</div>
+  </footer>
+
+  <div class="modal" id="loginModal">
+    <div class="modal-box small">
+      <button class="close" data-close="loginModal">×</button>
+      <div class="modal-icon">⚓</div>
+      <h2>Stakeholder Login</h2>
+      <p class="muted">Demo login for the prototype.</p>
+      <form id="loginForm">
+        <label>Email<input type="email" id="loginEmail" placeholder="you@example.com" required></label>
+        <label>Password<input type="password" id="loginPassword" placeholder="••••••••" required></label>
+        <button class="primary full" type="submit">Sign In</button>
+      </form>
+      <p class="demo-note">Demo: use any email and a password of 4+ characters.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="profileModal">
+    <div class="modal-box">
+      <button class="close" data-close="profileModal">×</button>
+      <span class="eyebrow" id="profileModalEyebrow">PROFILE</span>
+      <h2 id="profileModalTitle">Add Profile</h2>
+      <form id="profileForm">
+        <input type="hidden" id="profileType">
+        <input type="hidden" id="profileId">
+        <div class="form-grid">
+          <label>Full Name<input id="profileName" required></label>
+          <label>Role / Program<input id="profileRole" required></label>
+          <label>Email<input id="profileEmail" type="email"></label>
+          <label>Phone<input id="profilePhone"></label>
+          <label class="wide">Photo URL<input id="profilePhoto" placeholder="https://..."></label>
+          <label class="wide">Bio / Description<textarea id="profileBio" rows="4"></textarea></label>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="danger" id="deleteProfile">Delete</button>
+          <div><button type="button" class="secondary" data-close="profileModal">Cancel</button><button class="primary" type="submit">Save Profile</button></div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="dashboardModal">
+    <div class="modal-box">
+      <button class="close" data-close="dashboardModal">×</button>
+      <span class="eyebrow">STAKEHOLDER PORTAL</span>
+      <h2>Welcome to your dashboard</h2>
+      <div class="dashboard">
+        <div class="dashboard-card"><strong id="dashStakeholders">0</strong><span>Stakeholders</span></div>
+        <div class="dashboard-card"><strong id="dashMembers">0</strong><span>Members</span></div>
+        <div class="dashboard-card"><strong>✓</strong><span>Profile access</span></div>
+      </div>
+      <p class="muted">From here, authorized users can manage stakeholder and member profiles. In production, permissions should be controlled by a secure server/database.</p>
+      <button class="primary" data-close="dashboardModal">Continue</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
