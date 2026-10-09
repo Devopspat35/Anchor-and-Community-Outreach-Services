@@ -1,151 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anchor and Community Outreach Services</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Anchor and Community Outreach Services</title><link rel="stylesheet" href="styles.css"></head>
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <div class="logo">A</div>
-      <div>
-        <h1>Anchor and Community Outreach Services</h1>
-        <span>Connecting people. Strengthening communities.</span>
-      </div>
-    </div>
-    <button class="menu-btn" id="menuBtn">☰</button>
-    <nav id="mainNav">
-      <a href="#home">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#stakeholders">Stakeholders</a>
-      <a href="#members">Members</a>
-      <a href="#contact">Contact</a>
-      <button class="login-btn" id="openLogin">Stakeholder Login</button>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <span class="eyebrow">COMMUNITY • SUPPORT • CONNECTION</span>
-        <h2>Building stronger communities, one connection at a time.</h2>
-        <p>Anchor and Community Outreach Services brings stakeholders, members, families, and community partners together through compassionate support and meaningful engagement.</p>
-        <div class="hero-actions">
-          <a class="primary" href="#members">Meet Our Community</a>
-          <button class="secondary" id="heroLogin">Member / Stakeholder Login</button>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="hero-circle">⚓</div>
-        <h3>Our Community Hub</h3>
-        <p>A central place for profiles, community connections, updates, and outreach resources.</p>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="section-heading">
-        <span class="eyebrow">ABOUT US</span>
-        <h2>People at the heart of our work</h2>
-        <p>Use this space to introduce your organization, mission, services, programs, and community impact.</p>
-      </div>
-      <div class="feature-grid">
-        <article><div class="icon">🤝</div><h3>Community Outreach</h3><p>Connect members with programs, resources, events, and support.</p></article>
-        <article><div class="icon">👥</div><h3>Stakeholder Network</h3><p>Give partners a dedicated place to share their roles and contact information.</p></article>
-        <article><div class="icon">❤️</div><h3>Member Support</h3><p>Highlight members and celebrate the people who make the community stronger.</p></article>
-      </div>
-    </section>
-
-    <section class="section alt" id="stakeholders">
-      <div class="section-heading row">
-        <div><span class="eyebrow">STAKEHOLDERS</span><h2>Our community partners</h2></div>
-        <button class="outline" id="addStakeholder">+ Add Stakeholder</button>
-      </div>
-      <div class="profile-grid" id="stakeholderGrid"></div>
-    </section>
-
-    <section class="section" id="members">
-      <div class="section-heading row">
-        <div><span class="eyebrow">MEMBERS</span><h2>Meet our members</h2></div>
-        <button class="outline" id="addMember">+ Add Member</button>
-      </div>
-      <div class="profile-grid" id="memberGrid"></div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div>
-        <span class="eyebrow">GET IN TOUCH</span>
-        <h2>Let's build a stronger community together.</h2>
-        <p>Replace this information with your organization's address, phone number, email, office hours, and social media links.</p>
-      </div>
-      <div class="contact-card">
-        <p><strong>Email</strong><br>info@anchorcommunity.org</p>
-        <p><strong>Phone</strong><br>(000) 000-0000</p>
-        <p><strong>Office</strong><br>Community Services Centre</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div>© 2026 Anchor and Community Outreach Services</div>
-    <div>Privacy • Terms • Accessibility</div>
-  </footer>
-
-  <div class="modal" id="loginModal">
-    <div class="modal-box small">
-      <button class="close" data-close="loginModal">×</button>
-      <div class="modal-icon">⚓</div>
-      <h2>Stakeholder Login</h2>
-      <p class="muted">Demo login for the prototype.</p>
-      <form id="loginForm">
-        <label>Email<input type="email" id="loginEmail" placeholder="you@example.com" required></label>
-        <label>Password<input type="password" id="loginPassword" placeholder="••••••••" required></label>
-        <button class="primary full" type="submit">Sign In</button>
-      </form>
-      <p class="demo-note">Demo: use any email and a password of 4+ characters.</p>
-    </div>
-  </div>
-
-  <div class="modal" id="profileModal">
-    <div class="modal-box">
-      <button class="close" data-close="profileModal">×</button>
-      <span class="eyebrow" id="profileModalEyebrow">PROFILE</span>
-      <h2 id="profileModalTitle">Add Profile</h2>
-      <form id="profileForm">
-        <input type="hidden" id="profileType">
-        <input type="hidden" id="profileId">
-        <div class="form-grid">
-          <label>Full Name<input id="profileName" required></label>
-          <label>Role / Program<input id="profileRole" required></label>
-          <label>Email<input id="profileEmail" type="email"></label>
-          <label>Phone<input id="profilePhone"></label>
-          <label class="wide">Photo URL<input id="profilePhoto" placeholder="https://..."></label>
-          <label class="wide">Bio / Description<textarea id="profileBio" rows="4"></textarea></label>
-        </div>
-        <div class="form-actions">
-          <button type="button" class="danger" id="deleteProfile">Delete</button>
-          <div><button type="button" class="secondary" data-close="profileModal">Cancel</button><button class="primary" type="submit">Save Profile</button></div>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="modal" id="dashboardModal">
-    <div class="modal-box">
-      <button class="close" data-close="dashboardModal">×</button>
-      <span class="eyebrow">STAKEHOLDER PORTAL</span>
-      <h2>Welcome to your dashboard</h2>
-      <div class="dashboard">
-        <div class="dashboard-card"><strong id="dashStakeholders">0</strong><span>Stakeholders</span></div>
-        <div class="dashboard-card"><strong id="dashMembers">0</strong><span>Members</span></div>
-        <div class="dashboard-card"><strong>✓</strong><span>Profile access</span></div>
-      </div>
-      <p class="muted">From here, authorized users can manage stakeholder and member profiles. In production, permissions should be controlled by a secure server/database.</p>
-      <button class="primary" data-close="dashboardModal">Continue</button>
-    </div>
-  </div>
-
-  <script src="app.js"></script>
-</body>
-</html>
+<header class="header">
+<a class="brand" href="#"><img src="logo.svg" alt=""><span><b>Anchor and<br>Community Outreach<br>Services</b><small>Empowering People • Strengthening Communities</small></span></a>
+<nav><a href="#home">Home</a><a href="#about">About Us</a><a href="#benefits">Our Benefits</a><a href="#members">Members</a><a href="#contact">Contact</a></nav>
+<div class="nav-actions"><button class="btn outline" data-modal="signin">Sign In</button><button class="btn navy" data-modal="register">Create Account</button></div>
+</header>
+<main>
+<section class="hero" id="home"><div class="hero-copy"><div class="eyebrow">WELCOME TO</div><h1>Anchor and Community<br>Outreach Services</h1><div class="tagline">Stronger People <i>|</i> Healthier Communities <i>|</i> A Brighter Future</div><p>We are committed to building stronger, healthier, and more inclusive communities by providing support, resources, and opportunities for individuals and families.</p><a class="btn green" href="#benefits">Join Our Community <b>→</b></a></div><div class="hero-photo"><div class="photo-caption">Stronger People<br>Stronger Communities<br>A Brighter Future</div></div></section>
+<section class="benefits section" id="benefits"><div class="section-title"><h2>Our Benefits</h2><p>At Anchor and Community Outreach Services, we believe in creating<br class="desktop"> real change. Here are some of the key benefits of being part of our community:</p></div><div class="benefit-grid">
+<article><span class="bubble bblue">♟</span><h3>Support &amp; Guidance</h3><p>Access to personalized support and resources to help you reach your goals.</p></article>
+<article><span class="bubble bgreen">♥</span><h3>Community Connection</h3><p>Build relationships, networks, and a sense of belonging in your community.</p></article>
+<article><span class="bubble bpurple">▤</span><h3>Education &amp; Skill Building</h3><p>Gain knowledge and skills to improve your personal and professional growth.</p></article>
+<article><span class="bubble borange">↗</span><h3>Empowerment</h3><p>We help individuals and families build confidence and independence.</p></article>
+<article><span class="bubble bcyan">♡</span><h3>Health &amp; Wellbeing</h3><p>Promote physical, mental, and emotional well-being for a better quality of life.</p></article>
+<article><span class="bubble bpink">◎</span><h3>Lasting Impact</h3><p>Together, we create sustainable solutions for stronger communities now and in the future.</p></article>
+</div></section>
+<section class="mission section" id="about"><div><div class="eyebrow">OUR PURPOSE</div><h2>Together We Make a Difference</h2><p>Our vision is a community where everyone is empowered, valued, and has equal opportunities to thrive, regardless of gender, background, or ability.</p></div><div><h3>Our Mission</h3><p>To support, connect, and empower individuals and communities through inclusive programs, outreach, and sustainable partnerships that create lasting positive change.</p></div><div><h3>Our Goals</h3><p>Build active membership, connect people with essential resources, expand education and outreach programs, and create sustainable community impact.</p></div></section>
+<section class="closing"><h2>Why Choose Anchor and Community Outreach Services?</h2><div class="closing-grid"><div>👥<b>Empowerment</b><p>Builds confidence and creates opportunities for growth.</p></div><div>♡<b>Better Well-being</b><p>Access to resources that improve physical, mental and emotional health.</p></div><div>🤝<b>Stronger Communities</b><p>Brings people together and builds lasting connections.</p></div><div>🎓<b>Education &amp; Skills</b><p>Opens doors to learning, training and career opportunities.</p></div><div>🌱<b>Inclusive Services</b><p>Support for all, regardless of gender, background or ability.</p></div></div></section>
+<section class="contact section" id="contact"><div><div class="eyebrow">GET IN TOUCH</div><h2>Contact Us</h2><p>Have a question, partnership idea, or want to learn more? Reach out to us.</p><p class="contact-note">Contact information can be updated by an administrator in the admin panel.</p></div><div class="contact-card"><h3>Contact Information</h3><label>Organization Name<input id="orgName" value="Anchor and Community Outreach Services"></label><label>Email Address<input id="orgEmail" value="info@anchorcommunity.org"></label><label>Phone Number<input id="orgPhone" value="+1 (416) 555-0123"></label><label>Address<input id="orgAddress" value="123 Community Way, Toronto, ON"></label><button class="btn navy" id="saveContact">Save Changes (Admin Demo)</button><p id="contactMessage" class="hint">Demo mode: connect Supabase to securely save administrator changes.</p></div></section>
+<footer><div class="brand footer-brand"><img src="logo.svg" alt=""><span><b>Anchor and Community<br>Outreach Services</b><small>Empowering People • Strengthening Communities</small></span></div><div class="footer-links"><a href="#home">Home</a><a href="#about">About Us</a><a href="#benefits">Our Benefits</a><a href="#members">Members</a><a href="#contact">Contact</a></div><small>© <span id="year"></span> Anchor and Community Outreach Services. All rights reserved.</small></footer>
+</main>
+<div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal"><button class="close" id="closeModal" aria-label="Close">×</button><img src="logo.svg" alt="" class="modal-logo"><div class="eyebrow">MEMBER PORTAL</div><h2 id="modalTitle">Member Sign In</h2><p id="modalIntro">Access your profile and manage your information.</p><form id="accountForm"><label>Full name<input id="memberName" placeholder="Your full name" autocomplete="name"></label><label>Email address<input type="email" id="memberEmail" placeholder="you@example.com" required autocomplete="email"></label><label>Password<input type="password" id="memberPassword" placeholder="At least 6 characters" required minlength="6" autocomplete="current-password"></label><button class="btn navy full" type="submit" id="submitAccount">Sign In</button></form><p class="hint" id="modalMessage">Prototype preview only. Connect an authentication provider before collecting real member data.</p><button class="switch" id="switchMode">New member? Create an account</button></section></div>
+<script src="script.js"></script></body></html>
